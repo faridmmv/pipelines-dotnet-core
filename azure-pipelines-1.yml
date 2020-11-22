@@ -12,7 +12,7 @@ pool:
 
 stages:
 
- - stage: Build A
+ - stage: Build_A
    displayName: Build stage
    jobs:
     - job: Build
@@ -28,7 +28,7 @@ stages:
             echo $hostname
           displayName: 'Run a one-line script'
         
- - stage: Build B
+ - stage: Build_B
    displayName: Build stage
    jobs:
     - job: Build
