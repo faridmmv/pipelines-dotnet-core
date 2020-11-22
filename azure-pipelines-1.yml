@@ -17,6 +17,6 @@ strategy:
 container: $[ variables['containerImage'] ]
 
 steps:
-- script: echo "Hello, world! Hostname: $(hostname)"
+- script: echo "Hello, world!"
   displayName: 'Run a one-line script'
 
