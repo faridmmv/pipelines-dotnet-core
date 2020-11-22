@@ -9,22 +9,37 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-container: ubuntu:18.04
 
-steps:
-- script: |
-    echo "Hello, world!"
-    ls -la
-    cat /etc/os-release
-    echo $hostname
-  displayName: 'Run a one-line script'
+stages:
 
-container: ubuntu:16.04
-
-steps:
-- script: |
-    echo "Hello, world!!"
-    ls -la
-    cat /etc/os-release
-    echo $hostname
-  displayName: 'Run a one-line script'
+ - stage: Build A
+   displayName: Build stage
+   jobs:
+    - job: Build
+      displayName: Build
+      pool: 
+        vmImage: 'ubuntu-latest'
+        container: ubuntu:18.04
+      steps:
+        - script: |
+            echo "Hello, world!"
+            ls -la
+            cat /etc/os-release
+            echo $hostname
+          displayName: 'Run a one-line script'
+        
+ - stage: Build B
+   displayName: Build stage
+   jobs:
+    - job: Build
+      displayName: Build
+      pool: 
+        vmImage: 'ubuntu-latest'
+        container: ubuntu:18.04
+      steps:
+        - script: |
+            echo "Hello, world!"
+            ls -la
+            cat /etc/os-release
+            echo $hostname
+          displayName: 'Run a one-line script'
